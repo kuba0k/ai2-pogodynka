@@ -20,49 +20,12 @@ class MeasurementType extends AbstractType
                 'widget' => 'single_text',
                 'html5'=>true,
             ])
-            ->add('celsius', NumberType::class, [
-                'attr' => [
-                    'min' => -50,
-                    'max' => 60,
-                ]
-            ])
-            ->add('clouds', IntegerType::class,
-            [
-                'attr'=>[
-                    'min'=>0,
-                    'max'=>2
-                ],
-            ])
-            ->add('humidity', NumberType::class, [
-                'attr'=>[
-                    'min'=>0,
-                    'max'=>1
-                ],
-                'scale'=>2,
-                'html5' => true,
-            ])
-            ->add('rain', NumberType::class, [
-                'attr'=>[
-                    'min'=>0,
-                    'max'=>1
-                ],
-                'scale'=>2,
-                'html5' => true,
-            ])
-            ->add('air', IntegerType::class,
-                [
-                    'attr'=>[
-                        'min'=>0,
-                        'max'=>500
-                    ],
-                ])
-            ->add('smog', IntegerType::class,
-                [
-                    'attr'=>[
-                        'min'=>0,
-                        'max'=>2
-                    ],
-                ])
+            ->add('celsius', IntegerType::class)
+            ->add('clouds', IntegerType::class)
+            ->add('humidity', NumberType::class)
+            ->add('rain', NumberType::class)
+            ->add('air', IntegerType::class)
+            ->add('smog', IntegerType::class)
             ->add('location', EntityType::class, [
                 'class' => 'App\Entity\Location',
                 'choice_label' => 'city',

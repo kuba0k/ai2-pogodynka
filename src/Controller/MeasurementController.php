@@ -27,7 +27,7 @@ class MeasurementController extends AbstractController
     {
         $measurement = new Measurement();
         $form = $this->createForm(MeasurementType::class, $measurement,[
-            'validation_groups'=>'create'
+            'validation_groups'=>'new'
         ]);
         $form->handleRequest($request);
 
@@ -56,7 +56,7 @@ class MeasurementController extends AbstractController
     public function edit(Request $request, Measurement $measurement, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(MeasurementType::class, $measurement,[
-            'validation_groups'=>'create'
+            'validation_groups'=>'edit'
         ]);
         $form->handleRequest($request);
 

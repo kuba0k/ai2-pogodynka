@@ -1,0 +1,73 @@
+App\Entity\Location:
+  properties:
+    latitude:
+      - Range:
+          min: -90
+          max: 90
+          groups: ['new', 'edit']
+    longitude:
+      - Range:
+          min: -180
+          max: 180
+          groups: ['new', 'edit']
+    city:
+      - NotBlank:
+          groups: ['new', 'edit']
+    country:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Length:
+          min: 2
+          max: 2
+          groups: ['new', 'edit']
+
+App\Entity\Measurement:
+  properties:
+    date:
+      - NotBlank:
+          groups: ['new', 'edit']
+    celsius:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Range:
+          min: -50
+          max: 60
+          groups: ['new', 'edit']
+    clouds:
+      - NotBlank:
+          groups: [ 'new', 'edit' ]
+      - Range:
+          min: 0
+          max: 2
+          groups: ['new', 'edit']
+    humidity:
+      - NotBlank:
+          groups: [ 'new', 'edit' ]
+      - Range:
+          min: 0
+          max: 1
+          groups: ['new', 'edit']
+    rain:
+      - NotBlank:
+          groups: [ 'new', 'edit' ]
+      - Range:
+          min: 0
+          max: 1
+          groups: ['new', 'edit']
+    air:
+      - NotBlank:
+          groups: [ 'new', 'edit' ]
+      - Range:
+          min: 0
+          max: 500
+          groups: ['new', 'edit']
+    smog:
+      - NotBlank:
+          groups: [ 'new', 'edit' ]
+      - Range:
+          min: 0
+          max: 2
+          groups: ['new', 'edit']
+    location:
+      - NotBlank:
+          groups: ['new', 'edit']
