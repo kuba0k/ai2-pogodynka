@@ -139,4 +139,8 @@ class Measurement
 
         return $this;
     }
+
+    public function getFahrenheit(): string{
+        return (string)($this->getCelsius()*9/5 + 32);
+    }
 }

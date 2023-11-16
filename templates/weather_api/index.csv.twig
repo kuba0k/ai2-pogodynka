@@ -1,0 +1,4 @@
+Date,Celsius,City,Country
+{% for measurement in measurements %}
+{{ measurement.date | date('Y-m-d') }},{{ measurement.celsius }},{{ measurement.fahrenheit }},{{ city }},{{ country }}
+{% endfor %}
